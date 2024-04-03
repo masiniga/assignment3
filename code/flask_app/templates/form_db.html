@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<p><a href="/">home</a></p>
+<p>Entities and their heads:</p>
+<body>
+<table>
+                    <thead>
+                        <tr>
+                            <th>Entities</th>
+                            <th style="border-right-style: hidden;">Relations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                            {% for ent in ents %}
+                            <tr>
+                                <td> {{ ent.entity }}</td>
+                                <td style="border-right-style: hidden;"> {{ ent.head }}  </td>
+                                <td style="border-right-style: hidden;"> {{ ent.relation }}</td>
+                                <td> {{ ent.entity }}</td>
+                            </tr>
+                                    {% endfor %}
+                    </tbody>
+                </table>
+</body>
+</html>
